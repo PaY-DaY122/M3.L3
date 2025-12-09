@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados del Formulario</title>
+
+    <!-- Tipografía principal -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+    <!-- El CSS principal -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <style>
+        body {
+            background-color: #f6ffe9; /* Suave verde pastel */
+            font-family: 'Montserrat', sans-serif;
+            padding: 0;
+            margin: 0;
+        }
+
+        .header-result {
+            background-color: #CCE59D;
+            padding: 60px 30px;
+            text-align: right;
+            border-bottom: 4px solid #0EB07C;
+        }
+
+        .header-result h1 {
+            font-size: 36px;
+            margin: 0;
+            color: #272727;
+        }
+
+        .result-container {
+            max-width: 700px;
+            margin: 80px auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 24px;
+            border: 2px solid #EB8028;
+            box-shadow: 0 5px 14px rgba(0,0,0,0.15);
+        }
+
+        .item {
+            font-size: 20px;
+            padding: 12px 0;
+            border-bottom: 1px solid #EB8028;
+            color: #272727;
+        }
+
+        .item:last-child {
+            border-bottom: none;
+        }
+
+        .back-btn {
+            display: block;
+            margin: 40px auto 0;
+            padding: 15px 20px;
+            width: 260px;
+            text-align: center;
+            background-color: #0EB07C;
+            color: white;
+            text-decoration: none;
+            border-radius: 16px;
+            font-size: 18px;
+            transition: 0.2s;
+        }
+
+        .back-btn:hover {
+            box-shadow: 0px 0px 6px 3px #0EB07C;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Encabezado combinando con la web -->
+    <div class="header-result">
+        <h1>¡Formulario enviado con éxito!</h1>
+    </div>
+
+    <!-- Tarjeta moderna -->
+    <div class="result-container">
+        <p class="item"><strong>Tu nombre:</strong> {{ name }}</p>
+        <p class="item"><strong>Tu E-Mail:</strong> {{ email }}</p>
+        <p class="item"><strong>Tu dirección:</strong> {{ address }}</p>
+        <p class="item"><strong>Tu fecha:</strong> {{ date }}</p>
+
+        <a class="back-btn" href="/form">Volver al formulario</a>
+    </div>
+
+</body>
+</html>
